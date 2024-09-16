@@ -1,3 +1,4 @@
+
 let image=document.querySelector('img');
 let title=document.getElementById('title');
 let artist=document.getElementById('artist');
@@ -66,9 +67,10 @@ playBtn.addEventListener('click', () => (isplaying ? pauseSong(): playSong()));
 
 function loadSong(song){
     title.textContent = song.disPlayName;
+    console.log(title.textContent)
     artist.textContent = song.artist;
-    music.src = `music/${song.name}.mp3`;
-    image.src = `img/${song.name}.jpg`;
+    music.src = `${song.name}.mp3`;
+    image.src = `${song.name}.jpg`;
 }
 
 let currentSongIndex=0;
@@ -117,9 +119,6 @@ function updateTime(e){
         }   
         // console.log(currentSec);  
         currentTimeEl.textContent=`${currentMin}:${currentSec}`;
-        
-        
-
     }
 
 
